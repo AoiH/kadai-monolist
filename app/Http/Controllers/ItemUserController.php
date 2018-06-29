@@ -17,6 +17,7 @@ class ItemUserController extends Controller
         $rws_response = $client->execute('IchibaItemSearch', [
             'itemCode' => $itemCode,
         ]);
+        
         $rws_item = $rws_response->getData()['Items'][0]['Item'];
 
         // Item 保存 or 検索（見つかると作成せずにそのインスタンスを取得する）
@@ -46,7 +47,7 @@ class ItemUserController extends Controller
    
    
    
-   /*  public function have()
+   public function have()
     {
         $itemCode = request()->itemCode;
 
@@ -76,10 +77,10 @@ class ItemUserController extends Controller
     {
         $itemCode = request()->itemCode;
 
-        if (\Auth::user()->is_haveing($itemCode)) {
+        if (\Auth::user()->is_having($itemCode)) {
             $itemId = Item::where('code', $itemCode)->first()->id;
             \Auth::user()->dont_have($itemId);
         }
         return redirect()->back();
-    }*/
+    }
 }

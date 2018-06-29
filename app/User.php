@@ -72,11 +72,9 @@ class User extends Authenticatable
     
     
     
-    /*
-
     public function have_items()
     {
-        return $this->items()->where('type', 'want');
+        return $this->items()->where('type', 'have');
     }
 
     public function have($itemId)
@@ -96,7 +94,7 @@ class User extends Authenticatable
 
     public function dont_have($itemId)
     {
-        // 既に Want しているかの確認
+        // 既に Have しているかの確認
         $exist = $this->is_having($itemId);
 
         if ($exist) {
@@ -118,5 +116,5 @@ class User extends Authenticatable
             return $item_code_exists;
         }
     }
-    */
+    
 }
