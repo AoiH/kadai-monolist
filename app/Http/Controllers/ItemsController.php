@@ -20,6 +20,7 @@ class ItemsController extends Controller
                 'imageFlag' => 1,
                 'hits' => 20,
             ]);
+            
 
             // 扱い易いように Item としてインスタンスを作成する（保存はしない）
             foreach ($rws_response->getData()['Items'] as $rws_item) {
